@@ -8,5 +8,5 @@ module.exports = function compiler(input){
   //
   // return jsCode
 const tokens = tokenizer(input);
-
+return tokens
 }
