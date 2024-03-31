@@ -4,7 +4,6 @@ module.exports = function parser(tokens) {
     let token = tokens[current];
     //if statements
     if (token.type === "number") {
-      //one of the stop conditions
       current++;
       return {
         type: "NumberLiteral",
@@ -27,7 +26,6 @@ module.exports = function parser(tokens) {
       return expression;
     }
     throw new TypeError(`unkown token: '${token.type}'`);
-    //https://citw.dev/tutorial/create-your-own-compiler?p=6 this is where im at
   }
   const ast = {
     type: "Program",

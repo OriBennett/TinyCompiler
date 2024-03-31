@@ -1,7 +1,7 @@
 const tokenizer = require("./tokenizer");
 const parser = require("./parser");
 const transformer = require("./transformer");
-
+const generateCode = require("./generateCode");
 module.exports = function compiler(input) {
   // 1. Lexical Analysis
   const tokens = tokenizer(input);
@@ -10,7 +10,7 @@ module.exports = function compiler(input) {
   // 3. Transformation
   const jsAst = transformer(lispAST);
   // 4. Code Generation
-  //
+  const jsCode = generateCode(jsAst);
   // return jsCode
-  return jsAst;
+  return jsCode;
 };

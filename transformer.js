@@ -9,7 +9,7 @@ module.exports = function transformer(originalAST) {
 
   traverse(originalAST, {
     NumberLiteral(node) {
-        position.push({ // <-- the position variable does not exist yet
+        position.push({
           type: 'NumericLiteral',
           value: node.value
         });
@@ -17,7 +17,7 @@ module.exports = function transformer(originalAST) {
       CallExpression(node, parent){
         let expression = {
             type: 'CallExpression',
-            calee: {
+            callee: {
                 type: 'Identifier',
                 name: node.name
             },
